@@ -12,7 +12,7 @@ for _ in range(n - 1):
   graph[t].append(f)
 
 def dfs(now):
-  global result, cnt
+  global cnt
   for next in graph[now]:
     if visited[next]:
       continue
@@ -21,7 +21,6 @@ def dfs(now):
       continue
     visited[next] = True
     dfs(next)
-
 
 for i in range(1, n + 1):
   if visited[i]:
