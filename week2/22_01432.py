@@ -1,5 +1,3 @@
-# 1. 입력은 인접 행렬 형태로, V1 -> V2 로 연결된 간선이 있다는 의미
-# 2. 만약 V1 -> V2 로 연결된 간선이 있다면, V2가 V1보다 큼. 간선은 항상 큰 값을 가리킨다는 뜻
 import sys
 import heapq
 n = int(sys.stdin.readline().strip())
@@ -32,7 +30,6 @@ while pq:
     if degree[next] == 0:
       heapq.heappush(pq, (-next, next))
 
-# 위상정렬을 통해 간선을 제거했지만 아직 남은 간선이 있다면 사이클이 존재한다는 뜻
 for i in range(n):
   if degree[i] != 0:
     print(-1)
